@@ -1,0 +1,46 @@
+[data paths]
+original_imgs_train = ./DataSet/image/train/image/
+groundtruth_imgs_train = ./DataSet/image/train/groundtruth/
+original_imgs_test = ./DataSet/image/test/image/
+groundtruth_imgs_test = ./DataSet/image/test/groundtruth/
+dataset_path = ./DataSet/hdf5/
+path_local = ./DataSet/hdf5/
+train_imgs_original = dataset_imgs_train.hdf5
+train_groundtruth = dataset_groundTruth_train.hdf5
+test_imgs_original = dataset_imgs_test.hdf5
+test_groundtruth = dataset_groundTruth_test.hdf5
+
+[experiment name]
+name = Optic-Disc
+
+[data attributes]
+patch_height = 128
+patch_width = 128
+num_lesion_class = 1
+tensorflow = 0
+total_data = 110
+total_data_train = 90
+total_data_test = 19
+height = 400
+width = 600
+
+[training settings]
+full_images_to_train = 90
+n_subimgs = 200
+inside_fov = False
+n_epochs = 20
+batch_size = 15
+nohup = False
+
+[testing settings]
+best_last = best
+full_images_to_test = 19
+n_group_visual = 1
+average_mode = true
+stride_height = 10
+stride_width = 10
+nohup = False
+
+[predict settings]
+img_type = tif
+
