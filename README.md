@@ -1,7 +1,7 @@
 # Optic-Disc-Unet
 
 
-A modified Unet model with post-process for retina optic disc segmention.
+A modified Attention Unet model with post-process for retina optic disc segmention.
 
 The performance of our model on Messidor-dataset：
 
