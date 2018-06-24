@@ -9,7 +9,7 @@ The performance of our model on Messidor-dataset：
 
 
 ## Patched Based Attention Unet Model
-I use modified Attention Unet which input is 128x128pix image patches.To know more about attn-unet,please see the [paper][1].When sampling the patches,I focus the algorithm get samples around optic disc.The patches is like that:
+I use a modified Attention Unet which input of model is 128x128pix image patches.To know more about attn-unet,please see the [paper][1].When sampling the patches,I focus the algorithm get samples around optic disc.The patches is like that:
 
 ![sample patches](https://i.imgur.com/nBewGl9.jpg)
 
