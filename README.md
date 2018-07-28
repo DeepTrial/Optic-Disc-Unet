@@ -33,16 +33,23 @@ when directly use unet model, we often get some error predictions.So I use a pos
 
 lefted area is the final output.The problem of this algorithm is that the parameters not self-adjusting.so you have to change them if input image is larger or smaller than before.
 
-## Model Structure
-the model is trained on my own desktop(intel i7-7700hq,24GB RAM,gtx1050,2GB RAM) for about 1~2 hours.I use **keras(theano backend)** to write this model.
+## Project Structure
+The structure is based on my own [DL_Segmention_Template][4].Difference between this project and the template is that we have metric module in dir: perception/metric/. To get more Information about the structure please see readme in [DL_Segmention_Template][4].
 
-1. **prepare_dataset.py** this file is to generate hdf5 file. The training and test dataset is in dir *Dataset/image* and generated hdf5 files store in dir *Dataset/hdf5*.
-2. **xtrain.py** You can find sample-patches algorithm and trainer in this file.
-3. **xpredict.py** predict images in dir *TestFold/origin* one by one
-4. **odModel.py** define our model.You may find original unet,Resblock-Unet,Denseblock-Unet and AttnUnet.
+You can find model parameter in **configs/segmention_config.json**.
 
+### First to run
+**please run main_trainer.py first time**,then you will get data_route in experiment dir.Put your data in there, now you can run main_trainer.py again to train a model. 
+
+### where to put Pretrained Model
+the model is trained with *DRION dataset* on my own desktop(intel i7-7700hq,24g,gtx1050 2g) within 30 minutes.
+Datatset 
+
+### Test your own image
+if u want to test your own image,put ur image to **(OpticDisc)/test/origin**,and change the img_type of predict settings in **configs/segmention_config.json**,run main_test.py to get your result.The result is in **(OpticDisc)/test/result**
 
 
 [1]: https://arxiv.org/pdf/1804.03999v3.pdf
 [2]: https://github.com/DeepTrial/DRION-DB-PythonTools
-[3]: https://drive.google.com/open?id=1s1ri0glpr2R8bV_7iQgIBBKS1v3RDYQt
+[3]: https://drive.google.com/open?id=10E77IiHREFKYAgkMivsIRCBsEJHjgJIz
+[4]: https://github.com/DeepTrial/DL_Segmention_Template
